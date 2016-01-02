@@ -1,0 +1,13 @@
+<h3 class="masthead-brand">{{ site.title }}</h3>
+<h4 class="masthead-brand-sub">{{ site.subtitle }}</h4>
+
+<nav>
+  <ul class="nav masthead-nav">
+    <li class="nav__item"><a href="/">Home</a></li>
+    {% for my_page in site.pages %}
+      {% if my_page.title %}
+      <li class="nav__item"><a href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a></li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</nav>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body>
+    <div class="site-wrapper">
+      <div class="site-wrapper-inner">
+        <div class="cover-container">
+
+          <header class="masthead clearfix">
+            <div class="inner">
+              {% include header.html %}
+            </div>
+          </header>
+
+          <main class="inner cover">
+            {{ content }}
+          </main>
+
+          <footer class="mastfoot">
+            <div class="inner">
+              {% include footer.html %}
+            </div>
+          </footer>
+
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
