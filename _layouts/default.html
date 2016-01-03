@@ -4,28 +4,16 @@
   {% include head.html %}
 
   <body>
-    <div class="site-wrapper">
-      <div class="site-wrapper-inner">
-        <div class="cover-container">
+    <header class="navbar navbar-default navbar-fixed-top">
+      {% include header.html %}
+    </header>
 
-          <header class="masthead clearfix">
-            <div class="inner">
-              {% include header.html %}
-            </div>
-          </header>
+    <main>
+      {{ content }}
+    </main>
 
-          <main class="inner cover">
-            {{ content }}
-          </main>
-
-          <footer class="mastfoot">
-            <div class="inner">
-              {% include footer.html %}
-            </div>
-          </footer>
-
-        </div>
-      </div>
-    </div>
+    <footer>
+      {% include footer.html %}
+    </footer>
   </body>
 </html>

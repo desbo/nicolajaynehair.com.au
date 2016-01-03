@@ -1,13 +1,35 @@
-<h3 class="masthead-brand">{{ site.title }}</h3>
-<h4 class="masthead-brand-sub">{{ site.subtitle }}</h4>
+<div class="container brand">
+  <h3>{{ site.title }}</h3>
+  <h4>{{ site.subtitle }}</h4>
+</div>
 
-<nav>
-  <ul class="nav masthead-nav">
-    <li class="nav__item"><a href="/">Home</a></li>
-    {% for my_page in site.pages %}
-      {% if my_page.title %}
-      <li class="nav__item"><a href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a></li>
+<div class="container">
+  <nav class="navbar navbar-defualt">
+    <ul class="nav navbar-nav">
+      {% if page.url == "/" %}
+        <li class="active">
+          <a href="/">Home</a>
+        </li>
+      {% else %}
+        <li>
+          <a href="/">Home</a>
+        </li>
       {% endif %}
-    {% endfor %}
-  </ul>
-</nav>
+
+      {% assign sorted_pages = site.pages | sort: "order" %}
+      {% for nav_page in sorted_pages %}
+        {% if nav_page.title %}
+          {% if page.url == nav_page.url %}
+            <li class="active">
+              <a href="{{ nav_page.url | prepend: site.baseurl }}">{{ nav_page.title }}</a>
+            </li>
+          {% else %}
+            <li>
+              <a href="{{ nav_page.url | prepend: site.baseurl }}">{{ nav_page.title }}</a>
+            </li>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </nav>
+</div>

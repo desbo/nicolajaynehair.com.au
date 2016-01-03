@@ -1,5 +1,6 @@
 ---
 layout: page
 title: Price List
-permalink: /price-list/
+permalink: /services/
+order: 1
 ---
