@@ -1,0 +1,39 @@
+---
+layout: page
+title: Services
+permalink: /services/
+order: 1
+service_categories:
+- cuts
+- colour
+- beauty
+---
+<div class="row services">
+  {% for service_category in page.service_categories %}
+  <div class="col-md-4">
+    {% assign services = site.data.services | where:'category', service_category %}
+
+    {% for service in services %}
+    <div class="service__block">
+      <h3 class="service__name">{{ service.name }}</h3>
+
+      {% for product in service.products %}
+      <div class="service__product__name">{{ product.name }}</div>
+      <div class="service__product__price">
+          {% if product.price.range %}
+            <span class="service__product__price__text range">
+              ${{ product.price.range.from }} — ${{ product.price.range.to }}
+            </span>
+          {% else %}
+            <span class="service__product__price__text">
+              ${{ product.price }}
+            </span>
+          {% endif %}
+        </span>
+      </div>
+      {% endfor %}
+    </div>
+    {% endfor %}
+  </div>
+  {% endfor %}
+</div>

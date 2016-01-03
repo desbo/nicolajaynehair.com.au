@@ -1,0 +1,107 @@
+- name: "STYLECUTS/STYLING"
+  category: cuts
+  products:
+    - name: dry cut
+      price: 35
+
+    - name: "shampoo & cut"
+      price: 40
+
+- name: "CUT & STYLING"
+  category: cuts
+  products:
+    - name: short
+      price: 50
+
+    - name: medium
+      price: 60
+
+    - name: long
+      price: 70
+
+- name: BLOWDRY
+  category: cuts
+  products:
+    - name: short
+      price: 30
+
+    - name: medium
+      price: 35
+
+    - name: long
+      price: 45
+
+- name: "MEN'S"
+  category: cuts
+  products:
+    - name: stylecut
+      price: 25
+
+- name: SEMI-PERMANENT COLOUR
+  category: colour
+  products:
+    - name: short
+      price: 55
+
+    - name: medium
+      price: 75
+
+    - name: long
+      price: 90
+
+- name: PERMANENT COLOUR
+  category: colour
+  products:
+    - name: regrowth
+      price: 55
+
+    - name: short
+      price: 65
+
+    - name: medium
+      price: 85
+
+    - name: long
+      price: 100
+
+- name: HIGHLIGHTS/LOWLIGHTS
+  category: colour
+  products:
+    - name: T-section
+      price: 60
+
+    - name: 1/2 head
+      price: 90
+
+    - name: full head
+      price: 150
+
+    - name: streaks
+      price: 65
+
+    - name: toner
+      price:
+        range:
+          from: 15
+          to: 35
+
+- name: BEAUTY SERVICES
+  category: beauty
+  products:
+    - name: eyebrow wax
+      price: 15
+
+    - name: lip/chin wax
+      price: 10
+
+    - name: eyelash tint
+      price: 15
+
+    - name: eyebrow tint
+      price: 10
+
+    - name: "* any 3 services"
+      price: 30
+
+    - name: ear piercing
+      price: 20
