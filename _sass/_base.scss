@@ -1,17 +1,24 @@
+body {
+  background: url('/static/img/bg.png');
+  padding-top: 140px;
+  font-family: $alt-font-family;
+
+  @media (max-width: 768px) {
+    padding-top: 170px;
+  }
+}
+
 a {
-  color: #222;
+  &, &:focus, &:visited {
+    color: #222;
+    text-decoration: underline;
+  }
 
   &:hover {
     color: white;
     background: black;
     text-decoration: none;
   }
-}
-
-body {
-  background: url('/static/img/bg.png');
-  padding-top: 140px;
-  font-family: $alt-font-family;
 }
 
 .brand {
@@ -44,6 +51,10 @@ body {
     font-family: $base-font-family;
     text-transform: uppercase;
     width: 10em;
+  }
+
+  a {
+    text-decoration: none;
   }
 }
 
@@ -144,4 +155,53 @@ main {
 }
 .gm-style-iw a {
     color: #4272db;
+}
+
+/**
+ * award
+ */
+.award {
+  @media (max-width: 600px) {
+    display: none;
+  }
+
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  background: black;
+  color: white;
+  transform: rotate(-15deg);
+  width: 100px;
+  height: 100px;
+  padding-top: 4px;
+  z-index: 2000;
+
+  h4 {
+    font-family: $base-font-family;
+    font-size: 14px;
+  }
+
+  svg {
+    zoom: 65%;
+  }
+
+  #path2866 {
+    fill: white !important;
+  }
+
+  &:hover {
+    background: none;
+
+    h4 {
+      color: #222;
+    }
+
+    #path2866 {
+      fill: #222 !important;
+    }
+
+    svg {
+      background: white;
+    }
+  }
 }

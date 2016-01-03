@@ -1,35 +1,40 @@
-<div class="container brand">
+<a target="_blank" href="http://www.goldcoastbulletin.com.au/lifestyle/best-of-gold-coast/best-of-the-gold-coast-the-top-10-hairdressers-as-voted-by-you/story-fnoh0bti-1227384923641">
+  <div class="award">
+      <h4>Voted #3 <br /> on the Gold Coast in</h4>
+      {% include gold-coast-bulletin.html %}
+  </div>
+</a>
+
+<div class="brand">
   <h3>{{ site.title }}</h3>
   <h4>{{ site.subtitle }}</h4>
 </div>
 
-<div class="container">
-  <nav class="navbar navbar-defualt">
-    <ul class="nav navbar-nav">
-      {% if page.url == "/" %}
-        <li class="active">
-          <a href="/">Home</a>
-        </li>
-      {% else %}
-        <li>
-          <a href="/">Home</a>
-        </li>
-      {% endif %}
+<nav class="navbar navbar-defualt">
+  <ul class="nav navbar-nav">
+    {% if page.url == "/" %}
+      <li class="active">
+        <a href="/">Home</a>
+      </li>
+    {% else %}
+      <li>
+        <a href="/">Home</a>
+      </li>
+    {% endif %}
 
-      {% assign sorted_pages = site.pages | sort: "order" %}
-      {% for nav_page in sorted_pages %}
-        {% if nav_page.title %}
-          {% if page.url == nav_page.url %}
-            <li class="active">
-              <a href="{{ nav_page.url | prepend: site.baseurl }}">{{ nav_page.title }}</a>
-            </li>
-          {% else %}
-            <li>
-              <a href="{{ nav_page.url | prepend: site.baseurl }}">{{ nav_page.title }}</a>
-            </li>
-          {% endif %}
+    {% assign sorted_pages = site.pages | sort: "order" | where: "nav", true %}
+    {% for nav_page in sorted_pages %}
+      {% if nav_page.title && nav_page.order %}
+        {% if page.url == nav_page.url %}
+          <li class="active">
+            <a href="{{ nav_page.url | prepend: site.baseurl }}">{{ nav_page.title }}</a>
+          </li>
+        {% else %}
+          <li>
+            <a href="{{ nav_page.url | prepend: site.baseurl }}">{{ nav_page.title }}</a>
+          </li>
         {% endif %}
-      {% endfor %}
-    </ul>
-  </nav>
-</div>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</nav>

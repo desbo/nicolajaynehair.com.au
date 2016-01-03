@@ -2,6 +2,7 @@
 layout: page
 title: Services
 permalink: /services/
+nav: true
 order: 1
 service_categories:
 - cuts
@@ -10,7 +11,7 @@ service_categories:
 ---
 <div class="row services">
   {% for service_category in page.service_categories %}
-  <div class="col-md-4">
+  <div class="col-sm-4">
     {% assign services = site.data.services | where:'category', service_category %}
 
     {% for service in services %}
