@@ -205,3 +205,11 @@ main {
     }
   }
 }
+
+.site-credit {
+  float: right;
+  background: white;
+  text-transform: uppercase;
+  padding: 1em;
+  font-family: $base-font-family;
+}
